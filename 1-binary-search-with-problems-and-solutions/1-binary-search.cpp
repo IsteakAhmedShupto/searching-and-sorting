@@ -6,18 +6,29 @@ typedef long long ll;
 
 int main()
 {
-    ll n, target;
-    cin >> n >> target;
+    ll n;
+
+    cin >> n;
+
     vector<ll> arr(n);
+
     for (ll i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
+
+    ll target;
+
+    cin >> target;
+
     // Binary search is used for monotonic functions only
     // A monotonic function is a function which is either entirely nonincreasing or nondecreasing
+
     sort(arr.begin(), arr.end());
+
     ll low = 0;
-    ll high = arr[arr.size() - 1];
+
+    ll high = arr.size() - 1;
 
     ll mid = low + (high - low) / 2;
 
@@ -40,5 +51,6 @@ int main()
 
         mid = low + (high - low) / 2;
     }
+
     cout << -1;
 }
