@@ -9,6 +9,7 @@ int partition(vector<ll> &arr, ll start, ll end)
     ll pivot = arr[start];
 
     ll count = 0;
+
     for (ll i = start + 1; i <= end; i++)
     {
         if (arr[i] <= pivot)
@@ -16,13 +17,13 @@ int partition(vector<ll> &arr, ll start, ll end)
     }
 
     ll pivotIndex = start + count;
+
     swap(arr[pivotIndex], arr[start]);
 
     ll i = start, j = end;
 
     while (i < pivotIndex && j > pivotIndex)
     {
-
         while (arr[i] <= pivot)
         {
             i++;
